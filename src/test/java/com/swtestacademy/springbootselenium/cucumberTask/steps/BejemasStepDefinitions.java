@@ -37,4 +37,24 @@ public class BejemasStepDefinitions {
     public void userShouldSeeSelectedItemInTheBasket() {
         homePage.checkBasketForItem();
     }
+
+    @When("user select one category as {string} on Home Page")
+    public void userSelectOneCategoryAsOnHomePage(String category) {
+        homePage.selectOneCategory(category);
+    }
+
+    @Then("user should see all item is related correct category as {string}")
+    public void userShouldSeeAllItemIsRelatedCorrectCategoryAs(String categoryName) {
+        homePage.checkAllTheItemName(categoryName);
+    }
+
+    @When("user select sortType PRICEorALPHABETIC {string} on home Page")
+    public void userSelectSortTypePRICEorALPHABETICOnHomePage(String priceOrAlphabetic) {
+        homePage.selectSortingType(priceOrAlphabetic);
+    }
+
+    @Then("user should see PRICEorALPHABETIC {string} correct sorting")
+    public void userShouldSeePRICEorALPHABETICCorrectSorting(String priceOrAlphabetic) {
+        homePage.checkSortingType(priceOrAlphabetic);
+    }
 }
